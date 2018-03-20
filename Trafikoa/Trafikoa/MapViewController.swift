@@ -61,6 +61,7 @@ class MapViewController: UIViewController {
                                             causa: child["causa"].value ?? "?",
                                             nivel: child["nivel"].value ?? "?",
                                             carretera: child["carretera"].value ?? "?",
+                                            nombre: child["nombre"].value ?? "?",
                                             fechaInicio: date,
                                             latitud: Double(child["latitud"].value ?? "?") ?? 0.0,
                                             longitud: Double(child["longitud"].value ?? "?") ?? 0.0
@@ -97,7 +98,7 @@ class MapViewController: UIViewController {
 
 class Anotacion: NSObject, MKAnnotation {
 
-    let title: String? // MKAnnotation
+    var title: String? // MKAnnotation
     let subtitle: String?
     let coordinate: CLLocationCoordinate2D // MKAnnotation
     let fecha: String
@@ -108,8 +109,13 @@ class Anotacion: NSObject, MKAnnotation {
         let dateFmt = DateFormatter()
         dateFmt.dateFormat = "dd/MM/yyyy HH:mm"
 
-        self.title = "\(e.carretera) \(e.causa)"
-        self.subtitle = "\(e.nivel)\n\(e.fechaInicio)"
+        if(e.nombre != "?") {
+            self.title = "\(e.nombre) \(e.causa)"
+        } else {
+            self.title = "\(e.carretera) \(e.causa)"
+        }
+        
+        self.subtitle = "\(e.nivel)"
         self.coordinate = CLLocationCoordinate2D(latitude: e.latitud!, longitude: e.longitud!)
         self.fecha = dateFmt.string(from: e.fechaInicio)
 
@@ -128,8 +134,17 @@ class Anotacion: NSObject, MKAnnotation {
             self.color = UIColor.gray
         }
 
-        if(e.nivel.contains("T:")) {
+        if(e.nivel.contains("T: Abierto")) {
             self.color = UIColor.blue
+        }
+        if(e.nivel.contains("T: Precaución")) {
+            self.color = UIColor.orange
+        }
+        if(e.nivel.contains("T: Cadenas")) {
+            self.color = UIColor.red
+        }
+        if(e.nivel.contains("T: Cerrado")) {
+            self.color = UIColor.black
         }
 
         super.init()

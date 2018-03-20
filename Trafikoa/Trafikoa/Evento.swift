@@ -26,6 +26,7 @@ struct Evento: Comparable {
     var causa: String
     var nivel: String
     var carretera: String
+    var nombre: String
     var fechaInicio: Date
     var latitud: Double?
     var longitud: Double?
