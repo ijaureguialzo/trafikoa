@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		41A589EA206071C80074BFF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A589E9206071C80074BFF2 /* AppDelegate.swift */; };
-		41A589EC206071C80074BFF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A589EB206071C80074BFF2 /* ViewController.swift */; };
 		41A589EF206071C80074BFF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A589ED206071C80074BFF2 /* Main.storyboard */; };
 		41A589F1206071C80074BFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A589F0206071C80074BFF2 /* Assets.xcassets */; };
 		41A589F4206071C80074BFF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A589F2206071C80074BFF2 /* LaunchScreen.storyboard */; };
 		41A589FF206071C80074BFF2 /* TrafikoaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A589FE206071C80074BFF2 /* TrafikoaTests.swift */; };
 		41A58A0A206071C90074BFF2 /* TrafikoaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A58A09206071C90074BFF2 /* TrafikoaUITests.swift */; };
+		41A58A192060737C0074BFF2 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A58A172060737C0074BFF2 /* Evento.swift */; };
+		41A58A1A2060737C0074BFF2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A58A182060737C0074BFF2 /* MapViewController.swift */; };
 		5B562C7349065092AFFC0502 /* Pods_Trafikoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFBC9AFB643D83D23410B10 /* Pods_Trafikoa.framework */; };
 		6B898FD8EA9EF6CD5D902917 /* Pods_TrafikoaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C81F33F603A8ECE001188BB /* Pods_TrafikoaUITests.framework */; };
 		E45F4E22066970C4027A6BF0 /* Pods_TrafikoaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C52BEC0E03ABD201D357C96 /* Pods_TrafikoaTests.framework */; };
@@ -43,7 +44,6 @@
 		3C81F33F603A8ECE001188BB /* Pods_TrafikoaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrafikoaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A589E6206071C80074BFF2 /* Trafikoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trafikoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A589E9206071C80074BFF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		41A589EB206071C80074BFF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41A589EE206071C80074BFF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41A589F0206071C80074BFF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41A589F3206071C80074BFF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +54,8 @@
 		41A58A05206071C90074BFF2 /* TrafikoaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafikoaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A58A09206071C90074BFF2 /* TrafikoaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafikoaUITests.swift; sourceTree = "<group>"; };
 		41A58A0B206071C90074BFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41A58A172060737C0074BFF2 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
+		41A58A182060737C0074BFF2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6AFBC9AFB643D83D23410B10 /* Pods_Trafikoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trafikoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79767F68D1C7192EC3D2D865 /* Pods-TrafikoaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafikoaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrafikoaTests/Pods-TrafikoaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D11E01879076CEF81B8BB63 /* Pods-Trafikoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trafikoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trafikoa/Pods-Trafikoa.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,8 +116,9 @@
 		41A589E8206071C80074BFF2 /* Trafikoa */ = {
 			isa = PBXGroup;
 			children = (
+				41A58A172060737C0074BFF2 /* Evento.swift */,
+				41A58A182060737C0074BFF2 /* MapViewController.swift */,
 				41A589E9206071C80074BFF2 /* AppDelegate.swift */,
-				41A589EB206071C80074BFF2 /* ViewController.swift */,
 				41A589ED206071C80074BFF2 /* Main.storyboard */,
 				41A589F0206071C80074BFF2 /* Assets.xcassets */,
 				41A589F2206071C80074BFF2 /* LaunchScreen.storyboard */,
@@ -363,10 +366,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Trafikoa/Pods-Trafikoa-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -458,8 +463,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A589EC206071C80074BFF2 /* ViewController.swift in Sources */,
+				41A58A192060737C0074BFF2 /* Evento.swift in Sources */,
 				41A589EA206071C80074BFF2 /* AppDelegate.swift in Sources */,
+				41A58A1A2060737C0074BFF2 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

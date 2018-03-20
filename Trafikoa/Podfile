@@ -8,6 +8,7 @@ target 'Trafikoa' do
   # Pods for Trafikoa
 
   pod 'AEXML'
+  pod 'Alamofire', '~> 4.7'
 
   target 'TrafikoaTests' do
     inherit! :search_paths

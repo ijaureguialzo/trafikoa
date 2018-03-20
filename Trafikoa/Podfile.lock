@@ -1,12 +1,15 @@
 PODS:
   - AEXML (4.2.2)
+  - Alamofire (4.7.0)
 
 DEPENDENCIES:
   - AEXML
+  - Alamofire (~> 4.7)
 
 SPEC CHECKSUMS:
   AEXML: 5ebafc1b75e0bcf0f1b09b8ca8fed2d5a199479b
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
 
-PODFILE CHECKSUM: 7ffb2f79a0c90a36a7650fda74bb3fe6f580b48b
+PODFILE CHECKSUM: 0e01eef2d678e9234f1094e89f3da895b7f47f56
 
 COCOAPODS: 1.4.0
