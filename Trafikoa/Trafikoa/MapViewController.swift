@@ -42,12 +42,14 @@ class MapViewController: UIViewController {
     }
 
     // REF: https://stackoverflow.com/a/38716138/5136913
+    // REF: https://www.flaticon.com/free-icon/refresh_189687
     func addMapTrackingButton() {
-        let image = UIImage(named: "trackme") as UIImage?
+        let image = UIImage(named: "Refrescar") as UIImage?
         let button = UIButton(type: UIButtonType.custom) as UIButton
-        button.frame = CGRect(origin: CGPoint(x: 30, y: 100), size: CGSize(width: 50, height: 50))
+        // REF: https://stackoverflow.com/questions/17332622/how-get-bottom-y-coordinate
+        button.frame = CGRect(origin: CGPoint(x: view.frame.maxX - 70, y: view.frame.maxY - 100), size: CGSize(width: 50, height: 50))
         button.setImage(image, for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = .clear
         button.addTarget(self, action: #selector(MapViewController.cargarDatos), for: .touchUpInside)
         mapView.addSubview(button)
     }
