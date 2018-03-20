@@ -115,9 +115,9 @@ class Anotacion: NSObject, MKAnnotation {
             self.title = "\(e.carretera) \(e.causa)"
         }
         
-        self.subtitle = "\(e.nivel)"
         self.coordinate = CLLocationCoordinate2D(latitude: e.latitud!, longitude: e.longitud!)
         self.fecha = dateFmt.string(from: e.fechaInicio)
+        self.subtitle = "\(e.nivel)\n\n\(self.fecha)"
 
         switch e.nivel {
         case "Blanco":
