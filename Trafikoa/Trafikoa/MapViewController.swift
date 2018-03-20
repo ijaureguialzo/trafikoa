@@ -32,9 +32,36 @@ class MapViewController: UIViewController {
 
         mapView.delegate = self
 
+        cargarDatos()
+
+        // Centrar el mapa
+        let initialLocation = CLLocation(latitude: 43.1714635, longitude: -2.630595900000003)
+        centerMapOnLocation(location: initialLocation)
+
+        addMapTrackingButton()
+    }
+
+    // REF: https://stackoverflow.com/a/38716138/5136913
+    func addMapTrackingButton() {
+        let image = UIImage(named: "trackme") as UIImage?
+        let button = UIButton(type: UIButtonType.custom) as UIButton
+        button.frame = CGRect(origin: CGPoint(x: 30, y: 100), size: CGSize(width: 50, height: 50))
+        button.setImage(image, for: .normal)
+        button.backgroundColor = .green
+        button.addTarget(self, action: #selector(MapViewController.cargarDatos), for: .touchUpInside)
+        mapView.addSubview(button)
+    }
+
+    @objc func cargarDatos() {
         Alamofire.request("https://www.trafikoa.eus/servicios/IncidenciasTDT/IncidenciasTrafikoTDTGeo").responseData { res in
 
             if let data = res.data {
+
+                // Limpiar
+                print("Cargando datos")
+                eventos.removeAll()
+                // REF: https://stackoverflow.com/a/32850454/5136913
+                self.mapView.removeAnnotations(self.mapView.annotations)
 
                 let xml2 = String(data: data, encoding: .utf8) ?? "?"
                 let xml = xml2.replacingOccurrences(of: "ISO-8859-1", with: "UTF-8", options: .literal, range: nil)
@@ -80,13 +107,9 @@ class MapViewController: UIViewController {
                         self.mapView.addAnnotation(anotacion)
                     }
                 }
+
             }
         }
-
-        // Centrar el mapa
-        let initialLocation = CLLocation(latitude: 43.1714635, longitude: -2.630595900000003)
-        centerMapOnLocation(location: initialLocation)
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,7 +137,7 @@ class Anotacion: NSObject, MKAnnotation {
         } else {
             self.title = "\(e.carretera) \(e.causa)"
         }
-        
+
         self.coordinate = CLLocationCoordinate2D(latitude: e.latitud!, longitude: e.longitud!)
         self.fecha = dateFmt.string(from: e.fechaInicio)
         self.subtitle = "\(e.nivel)\n\n\(self.fecha)"
