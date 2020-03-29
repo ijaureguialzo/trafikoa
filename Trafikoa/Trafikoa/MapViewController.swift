@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
     let regionRadius: CLLocationDistance = 100000
 
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+        let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
@@ -45,7 +45,7 @@ class MapViewController: UIViewController {
     // REF: https://www.flaticon.com/free-icon/refresh_189687
     func addMapTrackingButton() {
         let image = UIImage(named: "Refrescar") as UIImage?
-        let button = UIButton(type: UIButtonType.custom) as UIButton
+        let button = UIButton(type: UIButton.ButtonType.custom) as UIButton
         // REF: https://stackoverflow.com/questions/17332622/how-get-bottom-y-coordinate
         button.frame = CGRect(origin: CGPoint(x: view.frame.maxX - 70, y: view.frame.maxY - 100), size: CGSize(width: 50, height: 50))
         button.setImage(image, for: .normal)
